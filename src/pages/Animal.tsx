@@ -22,6 +22,7 @@ export const Animal = () => {
     allAnimals.map((animal) => {
       if (animal.id.toString() === params.id) {
         animal.isFed = true;
+        animal.lastFed = new Date().toISOString();
         setDisabled(true);
       }
     });
@@ -36,6 +37,9 @@ export const Animal = () => {
         <>
           {" "}
           <ShowAnimal {...chosenAnimal}></ShowAnimal>
+          <h4>
+            {chosenAnimal.name} är {!disabled ? "hungrig" : "inte hungrig"}
+          </h4>
           <button onClick={feedAnimal} disabled={disabled}>
             Mata lilla djuret
           </button>
