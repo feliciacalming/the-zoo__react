@@ -6,6 +6,8 @@ import "./index.css";
 import { Startpage } from "./pages/Startpage";
 import { Animals } from "./pages/Animals";
 import { Animal } from "./pages/Animal";
+import { Error } from "./pages/Error";
+// import { animalsLoader } from "./loader/animalsLoader";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,8 @@ const router = createBrowserRouter([
   {
     path: "/animals",
     element: <Animals></Animals>,
+    errorElement: <Error></Error>,
+    // loader: animalsLoader,
   },
   {
     path: "/animals/:id",
@@ -25,6 +29,5 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-    <App />
   </React.StrictMode>
 );
