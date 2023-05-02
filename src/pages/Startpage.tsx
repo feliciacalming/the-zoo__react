@@ -1,11 +1,14 @@
-import { getAnimals } from "../services/AnimalService";
+import { Header } from "../components/Header/Header";
+import { getFromLS } from "../helpers/getFromLS";
 
 export const Startpage = () => {
-  getAnimals();
+  const animal = getFromLS();
+  console.log(animal);
 
   return (
     <>
-      <p>hej</p>
+      <Header></Header>
+      Välkommen till da zoo!
     </>
   );
 };
