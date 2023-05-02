@@ -6,5 +6,7 @@ export const getAnimals = async () => {
     "https://animals.azurewebsites.net/api/animals"
   );
 
+  console.log("Hämtar från API");
+
   return animalsFromDB.data;
 };
