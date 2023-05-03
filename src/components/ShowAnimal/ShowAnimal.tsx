@@ -1,20 +1,30 @@
 import { useState } from "react";
-import { IAnimal } from "../../models/IAnimal";
 import "./ShowAnimal.scss";
-import { getFromLS } from "../../helpers/getFromLS";
 import noImageLogo from "../../assets/no-image-icon.png";
+import { IAnimalProps } from "../../models/IAnimalProps";
 
-export const ShowAnimal = (props: IAnimal) => {
+export const ShowAnimal = (props: IAnimalProps) => {
   return (
     <>
-      <div className={`animal ${props.isFed ? "" : "animal--hungry"}`}>
+      <div
+        className={`animal ${`animal__${props.id.toString()}`} ${
+          props.isFed ? "" : "animal--hungry"
+        }`}
+      >
         <img
           className="animal__image"
           src={props.imageUrl}
           onError={(e) => (e.currentTarget.src = noImageLogo)}
         />
-        <h3 className="animal__name">{props.name}</h3>
-        <p className="animal__desc">{props.shortDescription}</p>
+        <article className="animal__info">
+          <h3 className="animal__name">{props.name}</h3>
+          <p className="animal__desc">{props.shortDescription}</p>
+          {props.fullDescription ? (
+            <p className="animal__desc">{props.longDescription}</p>
+          ) : (
+            ""
+          )}
+        </article>
       </div>
     </>
   );
