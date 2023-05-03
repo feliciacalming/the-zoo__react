@@ -38,6 +38,7 @@ export const Animal = () => {
             <h4>
               {animal.name} är {!animal.isFed ? "hungrig" : "mätt"}
             </h4>
+            <p>senast matad: {animal.lastFed}</p>
             <button onClick={feedAnimal} disabled={animal.isFed ? true : false}>
               Mata lilla djuret
             </button>
