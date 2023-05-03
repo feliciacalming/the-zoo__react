@@ -1,3 +1,5 @@
+@import "./scss/mixins";
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -19,15 +21,48 @@ body {
   padding: 0;
 }
 
-.animals-container {
+h1 {
+  margin: 0;
+}
+
+main {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+
+  @include desktop {
+    margin-top: 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.main__animals {
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+  }
+}
+
+.startpage {
+  margin: 0;
+}
+
+.start-image {
+  width: 100vw;
+
+  @include desktop {
+    width: 60vw;
+  }
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #5f1522;
   text-decoration: inherit;
 }
 a:hover {
