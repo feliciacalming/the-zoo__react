@@ -5,8 +5,6 @@ import { getFromLS } from "../../helpers/getFromLS";
 import noImageLogo from "../../assets/no-image-icon.png";
 
 export const ShowAnimal = (props: IAnimal) => {
-  const [allAnimals, setAllAnimals] = useState(getFromLS());
-
   return (
     <>
       <div className="animal">
