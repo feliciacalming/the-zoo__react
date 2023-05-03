@@ -6,43 +6,42 @@ import { IAnimal } from "../models/IAnimal";
 import { Error } from "./Error";
 import { useState } from "react";
 import { saveToLS } from "../helpers/saveToLS";
+import { checkTime } from "../helpers/checkTime";
 
 export const Animal = () => {
   const [allAnimals, setAllAnimals] = useState<IAnimal[]>(getFromLS());
-  const [disabled, setDisabled] = useState(false);
-
   const params = useParams();
-  const animals: IAnimal[] = getFromLS();
 
-  let chosenAnimal = animals.find(
-    (animal) => animal.id.toString() === params.id
-  );
+  let animal = allAnimals.find((animal) => animal.id.toString() === params.id);
 
   const feedAnimal = () => {
     allAnimals.map((animal) => {
       if (animal.id.toString() === params.id) {
         animal.isFed = true;
         animal.lastFed = new Date().toISOString();
-        setDisabled(true);
       }
     });
-
+    setAllAnimals([...allAnimals]);
     saveToLS(allAnimals);
   };
+
+  checkTime(allAnimals);
 
   return (
     <>
       <Header></Header>
-      {chosenAnimal ? (
+      {animal ? (
         <>
           {" "}
-          <ShowAnimal {...chosenAnimal}></ShowAnimal>
-          <h4>
-            {chosenAnimal.name} är {!disabled ? "hungrig" : "inte hungrig"}
-          </h4>
-          <button onClick={feedAnimal} disabled={disabled}>
-            Mata lilla djuret
-          </button>
+          <main>
+            <ShowAnimal {...animal}></ShowAnimal>
+            <h4>
+              {animal.name} är {!animal.isFed ? "hungrig" : "mätt"}
+            </h4>
+            <button onClick={feedAnimal} disabled={animal.isFed ? true : false}>
+              Mata lilla djuret
+            </button>
+          </main>
         </>
       ) : (
         <Error></Error>
