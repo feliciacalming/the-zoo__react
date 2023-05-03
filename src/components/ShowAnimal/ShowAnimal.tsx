@@ -7,7 +7,7 @@ import noImageLogo from "../../assets/no-image-icon.png";
 export const ShowAnimal = (props: IAnimal) => {
   return (
     <>
-      <div className="animal">
+      <div className={`animal ${props.isFed ? "" : "animal--hungry"}`}>
         <img
           className="animal__image"
           src={props.imageUrl}
