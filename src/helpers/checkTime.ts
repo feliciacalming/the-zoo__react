@@ -6,12 +6,9 @@ export const checkTime = (listOfAnimals: IAnimal[]) => {
 
   listOfAnimals.map((animal) => {
     let lastFed = Date.parse(animal.lastFed);
-    if (todaysDate - lastFed > 5000) {
-      // console.log(`${animal.name} är hungrig`);
+    if (todaysDate - lastFed > 180000) {
       animal.isFed = false;
       saveToLS(listOfAnimals);
-    } else {
-      console.log(`${animal.name} är MÄTT SOM FAN`);
     }
   });
 };
