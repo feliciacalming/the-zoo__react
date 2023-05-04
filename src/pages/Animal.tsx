@@ -14,18 +14,22 @@ export const Animal = () => {
 
   let animal = allAnimals.find((animal) => animal.id.toString() === params.id);
 
+  const lastFed = `${animal?.lastFed.substring(0, 10)} 
+    kl 
+    ${animal?.lastFed.substring(11, 19)}`;
+
   const feedAnimal = () => {
     allAnimals.map((animal) => {
       if (animal.id.toString() === params.id) {
         animal.isFed = true;
-        animal.lastFed = new Date().toISOString();
+        animal.lastFed = new Date().toLocaleString();
       }
     });
     setAllAnimals([...allAnimals]);
     saveToLS(allAnimals);
   };
 
-  checkTime(allAnimals);
+  checkTime(allAnimals, 10800000);
 
   return (
     <>
@@ -33,15 +37,22 @@ export const Animal = () => {
       {animal ? (
         <>
           {" "}
-          <main>
-            <ShowAnimal {...animal}></ShowAnimal>
-            <h4>
-              {animal.name} är {!animal.isFed ? "hungrig" : "mätt"}
-            </h4>
-            <p>senast matad: {animal.lastFed}</p>
-            <button onClick={feedAnimal} disabled={animal.isFed ? true : false}>
-              Mata lilla djuret
-            </button>
+          <main className="main__animalview">
+            <section className="animal-container">
+              <ShowAnimal {...animal} fullDescription={true}></ShowAnimal>
+              <div className="animal__details">
+                <h4>
+                  {animal.name} är {!animal.isFed ? "hungrig" : "mätt"}
+                </h4>
+                <p>senast matad: {lastFed}</p>
+                <button
+                  onClick={feedAnimal}
+                  disabled={animal.isFed ? true : false}
+                >
+                  Mata lilla djuret
+                </button>
+              </div>
+            </section>
           </main>
         </>
       ) : (
