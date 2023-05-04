@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import "./index.css";
+import "./index.scss";
 import { Startpage } from "./pages/Startpage";
 import { Animals } from "./pages/Animals";
 import { Animal } from "./pages/Animal";
@@ -23,6 +23,7 @@ const router = createBrowserRouter([
   {
     path: "/animals/:id",
     element: <Animal></Animal>,
+    errorElement: <Error></Error>,
   },
 ]);
 
