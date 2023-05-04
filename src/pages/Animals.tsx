@@ -11,6 +11,8 @@ export const Animals = () => {
   const [allAnimals, setallAnimals] = useState<IAnimal[]>([]);
   const animalsFromLS = getFromLS();
 
+  const activeLink = false;
+
   useEffect(() => {
     if (animalsFromLS.length === 0) {
       getAnimals().then((animals) => {
@@ -26,11 +28,15 @@ export const Animals = () => {
     <>
       <Header></Header>
       <main className="main__animals">
-        {allAnimals.map((animal, index) => (
-          <Link key={index} to={animal.id.toString()}>
-            <ShowAnimal {...animal}></ShowAnimal>
-          </Link>
-        ))}
+        {activeLink
+          ? allAnimals.map((animal, index) => (
+              <Link key={index} to={animal.id.toString()}>
+                <ShowAnimal {...animal}></ShowAnimal>
+              </Link>
+            ))
+          : allAnimals.map((animal, index) => (
+              <ShowAnimal {...animal}></ShowAnimal>
+            ))}
       </main>
     </>
   );
