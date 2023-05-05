@@ -1,0 +1,22 @@
+@import "../../scss/mixins";
+
+.bubble {
+  @include desktop {
+    display: flex;
+
+    &__img {
+      width: 12%;
+      position: absolute;
+      margin-left: 8%;
+      margin-top: -5%;
+    }
+
+    &__text {
+      position: absolute;
+      margin-left: 10%;
+      margin-top: -2.5%;
+      color: black;
+      font-size: 0.8rem;
+    }
+  }
+}
