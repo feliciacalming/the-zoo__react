@@ -1,6 +1,8 @@
+import { useState } from "react";
 import "./ShowAnimal.scss";
 import noImageLogo from "../../assets/no-image-icon.png";
 import { IAnimalProps } from "../../models/IAnimalProps";
+import { Speechbubble } from "../Speechbubble/Speechbubble";
 
 export const ShowAnimal = ({
   id,
@@ -13,6 +15,7 @@ export const ShowAnimal = ({
 }: IAnimalProps) => {
   return (
     <>
+      {!isFed ? <Speechbubble></Speechbubble> : <></>}
       <div
         className={`animal ${`animal__${id.toString()}`} ${
           isFed ? "" : "animal--hungry"
