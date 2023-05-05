@@ -1,12 +1,13 @@
+import "./Animal.scss";
 import { useParams } from "react-router-dom";
-import { Header } from "../components/Header/Header";
-import { ShowAnimal } from "../components/ShowAnimal/ShowAnimal";
-import { getFromLS } from "../helpers/getFromLS";
-import { IAnimal } from "../models/IAnimal";
-import { Error } from "./Error";
+import { Header } from "../../components/Header/Header";
+import { ShowAnimal } from "../../components/ShowAnimal/ShowAnimal";
+import { getFromLS } from "../../helpers/getFromLS";
+import { IAnimal } from "../../models/IAnimal";
+import { Error } from "../Error/Error";
 import { useState } from "react";
-import { saveToLS } from "../helpers/saveToLS";
-import { checkTime } from "../helpers/checkTime";
+import { saveToLS } from "../../helpers/saveToLS";
+import { checkTime } from "../../helpers/checkTime";
 
 export const Animal = () => {
   const [allAnimals, setAllAnimals] = useState<IAnimal[]>(getFromLS());
@@ -33,7 +34,6 @@ export const Animal = () => {
 
   return (
     <>
-      <Header></Header>
       {animal ? (
         <>
           {" "}

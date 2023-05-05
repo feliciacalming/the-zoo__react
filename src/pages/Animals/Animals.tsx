@@ -1,11 +1,11 @@
-import { Header } from "../components/Header/Header";
-import { IAnimal } from "../models/IAnimal";
+import "./Animals.scss";
+import { IAnimal } from "../../models/IAnimal";
 import { useEffect, useState } from "react";
-import { getAnimals } from "../services/AnimalService";
-import { ShowAnimal } from "../components/ShowAnimal/ShowAnimal";
+import { getAnimals } from "../../services/AnimalService";
+import { ShowAnimal } from "../../components/ShowAnimal/ShowAnimal";
 import { Link } from "react-router-dom";
-import { saveToLS } from "../helpers/saveToLS";
-import { getFromLS } from "../helpers/getFromLS";
+import { saveToLS } from "../../helpers/saveToLS";
+import { getFromLS } from "../../helpers/getFromLS";
 
 export const Animals = () => {
   const [allAnimals, setallAnimals] = useState<IAnimal[]>([]);
@@ -24,7 +24,6 @@ export const Animals = () => {
 
   return (
     <>
-      <Header></Header>
       <main className="main__animals">
         {allAnimals.map((animal, index) => (
           <Link

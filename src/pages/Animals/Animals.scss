@@ -1,0 +1,22 @@
+@use "../../scss/mixins" as mix;
+
+.main {
+  &__animals {
+    @include mix.desktop {
+      z-index: 5;
+      flex-direction: column;
+      height: 1600px;
+      max-width: 1350px;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+}
+
+.link-to-animal {
+  @include mix.desktop {
+    width: 20%;
+    text-decoration: none;
+  }
+}

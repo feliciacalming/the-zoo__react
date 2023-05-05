@@ -1,0 +1,13 @@
+@use "../../scss/mixins" as mix;
+
+.startpage {
+  margin: 0;
+}
+
+.start-image {
+  width: 100vw;
+
+  @include mix.desktop {
+    width: 60vw;
+  }
+}
