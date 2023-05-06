@@ -6,9 +6,11 @@ import { Footer } from "../Footer/Footer";
 export const Layout = () => {
   return (
     <>
-      <Header></Header>
-      <Outlet></Outlet>
-      <Footer></Footer>
+      <div className="content">
+        <Header></Header>
+        <Outlet></Outlet>
+        <Footer></Footer>
+      </div>
     </>
   );
 };
