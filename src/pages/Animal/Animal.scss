@@ -4,20 +4,51 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("../../assets//shapes.jpg");
-  background-size: contain;
+  // background-image: url("../../assets//shapes.jpg");
+  // background-size: contain;
+  background-image: radial-gradient(rgb(208, 235, 213) 55%, rgb(181, 203, 167));
+  height: 100%;
+  width: 100%;
 
   @include mix.desktop {
     flex-direction: column;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   .animal {
+    &__desc--long {
+      width: 100%;
+      font-style: italic;
+    }
+
+    &__details {
+      align-self: flex-start;
+      margin-left: 2%;
+      margin-top: 5px;
+
+      h5,
+      p {
+        margin: 0;
+      }
+
+      h5 {
+        font-size: 1rem;
+      }
+
+      button {
+        margin-top: 20px;
+        font-size: 1rem;
+      }
+    }
+
     @include mix.desktop {
       width: 80vw;
       flex-direction: row;
       justify-content: flex-start;
       align-items: flex-start;
-      border: none;
 
       &__section-one {
         width: 50%;
@@ -35,11 +66,14 @@
 
       &__desc {
         text-align: center;
+        margin-bottom: 8px;
 
         &--long {
           line-height: 1.5rem;
           margin: 0;
           font-style: italic;
+          font-size: 0.8rem;
+          width: 50%;
         }
       }
 
@@ -49,12 +83,17 @@
       }
 
       &__details {
-        margin-top: 30px;
         align-self: flex-start;
         margin-left: 14%;
-        h4,
+        margin-top: 5px;
+
+        h5,
         p {
           margin: 0;
+        }
+
+        p {
+          font-size: 0.8rem;
         }
 
         button {
@@ -68,4 +107,6 @@
 .animal-container {
   background-color: white;
   padding: 10px;
+  margin: 2%;
+  border: 1px solid rgb(236, 225, 225);
 }
