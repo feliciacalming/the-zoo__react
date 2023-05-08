@@ -18,7 +18,6 @@ export const router = createBrowserRouter([
         path: "/animals",
         element: <Animals></Animals>,
         errorElement: <Error></Error>,
-        // loader: animalsLoader,
       },
       {
         path: "/animals/:id",

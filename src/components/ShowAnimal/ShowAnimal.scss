@@ -2,8 +2,6 @@
 
 .animal {
   margin: 0;
-  padding: 0;
-  // margin-top: 30px;
   width: 80vw;
   height: min-content;
   display: flex;
@@ -11,13 +9,7 @@
   justify-content: center;
   align-items: center;
   padding: 5px;
-  // border: 1px solid rgb(0, 0, 0);
   background-color: white;
-
-  &--hungry {
-    background-color: rgba(252, 197, 201, 0.903);
-    background-color: white;
-  }
 
   @include desktop {
     width: 100%;
@@ -42,19 +34,12 @@
   &__desc {
     margin-top: 5px;
     color: black;
+    text-align: center;
+
     @include desktop {
       font-size: 0.8rem;
       margin-bottom: 50px;
-    }
-
-    // &--long {
-    //   font-size: 0.8rem;
-    //   width: 50%;
-    // }
-
-    @include desktop {
       width: 90%;
-      text-align: center;
     }
   }
 }

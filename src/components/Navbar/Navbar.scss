@@ -15,9 +15,10 @@
     display: inline;
     text-decoration: none;
     font-size: 1rem;
-    color: wheat;
+    color: rgb(255, 185, 104);
+
     &:hover {
-      color: rgb(255, 252, 222);
+      text-shadow: 2px 2px 2px black;
     }
   }
 }
