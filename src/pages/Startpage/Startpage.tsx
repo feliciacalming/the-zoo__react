@@ -37,11 +37,10 @@ export const Startpage = () => {
           {window.innerWidth > 768 ? <h1>Välkommen till The Zoo!</h1> : <></>}
           <h2>Här bor ett gäng snälla djur.</h2>
           <h3>Just nu är {numberOfAnimals} djur hungriga!</h3>
-          <button>
-            <Link to="/animals">
-              Klicka här för att se vilka som behöver matas.
-            </Link>
-          </button>
+
+          <Link to="/animals">
+            Klicka här för att se vilka som behöver matas.
+          </Link>
         </section>
         <img className="startpage__image" src={panda} />
         {window.innerWidth < 768 ? <h1>Välkommen till The Zoo!</h1> : <></>}
