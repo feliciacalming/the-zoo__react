@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { saveToLS } from "../../helpers/saveToLS";
 import { getFromLS } from "../../helpers/getFromLS";
 import Masonry from "react-masonry-css";
+import { checkTime } from "../../helpers/checkTime";
 
 export const Animals = () => {
   const [allAnimals, setallAnimals] = useState<IAnimal[]>([]);
@@ -28,6 +29,8 @@ export const Animals = () => {
       setallAnimals(animalsFromLS);
     }
   }, []);
+
+  checkTime(animalsFromLS, 14400000);
 
   return (
     <>
