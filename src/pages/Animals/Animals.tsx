@@ -6,10 +6,17 @@ import { ShowAnimal } from "../../components/ShowAnimal/ShowAnimal";
 import { Link } from "react-router-dom";
 import { saveToLS } from "../../helpers/saveToLS";
 import { getFromLS } from "../../helpers/getFromLS";
+import Masonry from "react-masonry-css";
 
 export const Animals = () => {
   const [allAnimals, setallAnimals] = useState<IAnimal[]>([]);
   const animalsFromLS = getFromLS();
+
+  const breakpoints = {
+    default: 4,
+    1100: 3,
+    700: 1,
+  };
 
   useEffect(() => {
     if (animalsFromLS.length === 0) {
@@ -25,15 +32,17 @@ export const Animals = () => {
   return (
     <>
       <main className="main__animals">
-        {allAnimals.map((animal, index) => (
-          <Link
-            className="link-to-animal"
-            key={index}
-            to={animal.id.toString()}
-          >
-            <ShowAnimal {...animal}></ShowAnimal>
-          </Link>
-        ))}
+        <Masonry
+          breakpointCols={breakpoints}
+          className="animal-grid"
+          columnClassName="animal-grid-column"
+        >
+          {allAnimals.map((animal, index) => (
+            <Link key={index} to={animal.id.toString()}>
+              <ShowAnimal {...animal}></ShowAnimal>
+            </Link>
+          ))}
+        </Masonry>
       </main>
     </>
   );
