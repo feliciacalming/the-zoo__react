@@ -2,6 +2,7 @@
 
 .startpage {
   flex-direction: column-reverse;
+  position: relative;
 
   h1,
   h2 {
@@ -12,15 +13,10 @@
     margin-bottom: 0;
   }
 
-  button {
-    padding-left: 0;
-    background-color: transparent;
-  }
-
   a {
     color: black;
     &:hover {
-      color: rgb(228, 255, 221);
+      text-shadow: 1px 1px 1px rgb(136, 136, 136);
     }
   }
 

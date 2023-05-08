@@ -1,36 +1,36 @@
 @use "../../scss/mixins" as mix;
 
-.main {
-  &__animals {
-    padding-top: 10%;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+.main__animals::before {
+  background-size: 270%;
+  background-position: -30% 40%;
+  position: absolute;
+}
 
-    @include mix.desktop {
-      flex-direction: column;
-      height: 1600px;
-      min-width: 100vw;
-      max-width: 1350px;
-      justify-content: flex-start;
-      align-items: center;
-      column-gap: 0;
-      padding-top: 7%;
-      flex-wrap: wrap;
+.main__animals {
+  .animal {
+    margin-bottom: 10px;
+  }
 
-      .animal {
-        &:hover {
-          width: 103%;
-          margin-left: -2%;
-        }
+  @include mix.desktop {
+    width: 100vw;
+
+    .animal {
+      &:hover {
+        width: 103%;
+        margin-left: -2%;
+        border: 1px solid black;
       }
     }
   }
 }
 
-.link-to-animal {
-  @include mix.desktop {
-    width: 20%;
-    text-decoration: none;
-  }
+.animal-grid {
+  display: flex;
+  width: auto;
+  margin: 60px;
+}
+
+.animal-grid-column {
+  background-clip: padding-box;
+  margin: 10px;
 }
