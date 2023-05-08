@@ -1,9 +1,11 @@
+@use "../../scss/variables" as var;
+
 footer {
   width: 100vw;
   height: 8vh;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  background-color: rgba(39, 104, 58, 0.974);
+  background-color: var.$color-primary;
   color: white;
   display: flex;
   align-items: center;

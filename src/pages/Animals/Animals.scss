@@ -16,13 +16,13 @@
       align-items: center;
       column-gap: 0;
       padding-top: 7%;
-    }
+      flex-wrap: wrap;
 
-    .animal {
-      &:hover {
-        width: 103%;
-        background-color: rgb(255, 251, 180);
-        margin-left: -2%;
+      .animal {
+        &:hover {
+          width: 103%;
+          margin-left: -2%;
+        }
       }
     }
   }

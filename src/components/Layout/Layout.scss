@@ -1,28 +1,19 @@
 @use "../../scss/mixins" as mix;
+@use "../../scss/variables" as var;
 
 main {
-  z-index: 4;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  //   min-height: 100vh;
   width: 100vw;
-  overflow: hidden;
-
-  @include mix.desktop {
-    // margin-top: 50px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
+  background-color: var.$color-secondary;
 }
 
 .content {
   min-height: 100vh;
   display: grid;
   justify-content: center;
-  align-items: center;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
@@ -40,18 +31,23 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
+  background-color: rgba(79, 223, 65, 0.546);
+  border: 1px solid black;
+
+  &:hover {
+    background-color: rgba(78, 223, 65, 0.271);
+  }
 }
 
 button:disabled {
-  border-color: none;
+  background-color: rgba(235, 235, 235, 0.755);
+  border: none;
 
   &:hover {
-    border-color: none;
+    background-color: rgba(235, 235, 235, 0.755);
   }
 }
+
 // button:focus,
 // button:focus-visible {
 //   outline: 4px auto -webkit-focus-ring-color;
