@@ -41,15 +41,15 @@ export const Animal = () => {
             <section className="animal-container">
               <ShowAnimal {...animal} fullDescription={true}></ShowAnimal>
               <div className="animal__details">
-                <h4>
-                  {animal.name} är {!animal.isFed ? "hungrig" : "mätt"}
-                </h4>
+                <h5>
+                  {animal.name} är {!animal.isFed ? "hungrig!" : "mätt!"}
+                </h5>
                 <p>senast matad: {lastFed}</p>
                 <button
                   onClick={feedAnimal}
                   disabled={animal.isFed ? true : false}
                 >
-                  Mata lilla djuret
+                  Mata djuret
                 </button>
               </div>
             </section>
