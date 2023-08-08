@@ -21,6 +21,7 @@ This was a school assignment where we were given an API endpoint consisting of a
 #### For extra credit:
 
 ☑️  When you visit the animal's page again, check if it has been more than three hours since the last feeding. If this is the case, the feeding status is reset, and it should be possible to feed the animal again. 
+
 ☑️ For an extra challenge, you should display a small notice on the homepage as well as on the animal's page, indicating that an animal needs to be fed if more than four hours have passed since it was last fed.
 
 ## Get started
