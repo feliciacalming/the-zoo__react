@@ -15,8 +15,8 @@ export const Animals = () => {
 
   const breakpoints = {
     default: 4,
-    1100: 3,
-    700: 1,
+    1100: 2,
+    800: 1,
   };
 
   useEffect(() => {
